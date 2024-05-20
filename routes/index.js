@@ -3,9 +3,13 @@ var router = express.Router();
 const mapboxSdk = require("@mapbox/mapbox-sdk");
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
 
+
 const geocodingClient = mapboxSdk({
   accessToken: accessToken,
 }).geocoding;
+
+const feedbackRoutes = require('./feedbackRoutes');
+router.use(feedbackRoutes);
 
 const db = require("../model/helper");
 require("dotenv").config();

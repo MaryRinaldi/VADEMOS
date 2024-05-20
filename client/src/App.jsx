@@ -8,6 +8,8 @@ import HomePage from './components/views/HomePage.jsx';
 import './components/pages/Modal.jsx'
 import NavBar from "./navbar";
 import Tools from './components/views/Tools.jsx';
+import Feedback from './components/views/Feedback.jsx'
+
 
 
 
@@ -35,7 +37,7 @@ function App() {
       <NavBar darkMode={darkMode}/>
       <Routes>
           <Route path="/" element={<HomePage/>} />
-          {/* <Route path="/survey" element={<Survey/>} />*/}
+          <Route path="/feedback" element={<Feedback/>} />
           <Route path="/tools" element={<Tools/>} /> 
           </Routes>
     </div>
@@ -47,7 +49,7 @@ function App() {
           onChange={handleToggle}
           aria-label={darkMode ? 'Turn on light mode' : 'Turn on dark mode'}
         />
-<label htmlFor="darkModeSwitch">
+<label className='toggleLabel' htmlFor="darkModeSwitch">
   {darkMode ? 'Light mode' : 'Dark mode'}
 </label>
       </div>
