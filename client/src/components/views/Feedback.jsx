@@ -99,8 +99,8 @@ const Feedback = () => {
   );
 
   return (
-    <div id="root">
-      <h1>Feedback Survey</h1>
+    <div id="feedback">
+      <h3>Feedback Survey</h3>
       <button className="home-button" onClick={() => setShowModal(true)}>
         Give Feedback
       </button>

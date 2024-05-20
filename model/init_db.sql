@@ -1,16 +1,13 @@
---
 -- Drop Tables
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS PCP_FMD;
 DROP TABLE IF EXISTS Animal_Diseases;
---
+DROP TABLE IF EXISTS feedback;
 
+-- Set foreign key checks
 SET foreign_key_checks = 0;
-DROP TABLE if exists users;
-SET foreign_key_checks = 1;
 
-
--- 
+-- create user table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     userName VARCHAR(255) NOT NULL,
@@ -21,7 +18,7 @@ CREATE TABLE users (
     UNIQUE (userName)
 );
 
---
+-- create pcp fmd table
 CREATE TABLE PCP_FMD (
     id INT PRIMARY KEY,
     country VARCHAR(100),
@@ -32,7 +29,8 @@ CREATE TABLE PCP_FMD (
     last_meeting_attended VARCHAR(100),
     pso_support VARCHAR(100)
 );
---
+
+-- create animal disease table
 CREATE TABLE Animal_Diseases (
     year INT,
     semester VARCHAR(50),
@@ -52,10 +50,21 @@ CREATE TABLE Animal_Diseases (
     killed_disposed INT,
     slaughtered INT,
     deaths INT,
-    vaccinated INT,
+    vaccinated INT
 );
 
---
+-- create feedback table
+CREATE TABLE feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usabilityMap INT NOT NULL,
+    usabilityPredictionTool INT NOT NULL,
+    additionalComments TEXT,
+    overallExperience INT NOT NULL,
+    featureRequests TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- insert data in pcp_fmd table
 INSERT INTO PCP_FMD (id, country, area, roadmap_region, year, pcp_fmd_stage, last_meeting_attended, pso_support) VALUES
 (1178, 'Afghanistan', NULL, 'West Eurasia', 2024, 'PCP-1', 'April 2023', NULL),
 (1183, 'Bahrain', NULL, 'Middle East', 2024, 'PCP-2', 'December 2021', NULL),
@@ -63,8 +72,7 @@ INSERT INTO PCP_FMD (id, country, area, roadmap_region, year, pcp_fmd_stage, las
 (1202, 'Egypt', NULL, 'Middle East', 2024, 'PCP-2', 'December 2021', NULL),
 (1203, 'Equatorial Guinea', NULL, 'Central Africa', 2024, 'PCP-0', 'September 2022', NULL),
 (1204, 'Eritrea', NULL, 'East Africa', 2024, 'PCP-1', 'March 2022', NULL),
-(1205, 'Eswatini', NULL, 'Southern African Development Community', 2024, NULL, 'November 2020', NULL)
- 
+(1205, 'Eswatini', NULL, 'Southern African Development Community', 2024, NULL, 'November 2020', NULL);
 
 -- Insert data into animal disease table
 INSERT INTO Animal_Diseases (year, semester, world_region, country, administrative_division, disease, serotype_subtype_genotype, animal_category, species, event_id, outbreak_id, new_outbreaks, susceptible, measuring_units, cases, killed_disposed, slaughtered, deaths, vaccinated) VALUES
@@ -76,8 +84,5 @@ INSERT INTO Animal_Diseases (year, semester, world_region, country, administrati
 (2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'Bhimad', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131375, 1, 5, 'Animal', 2, 0, 0, 2, 0),
 (2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'MadhyaNepal', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131376, 1, 17, 'Animal', 8, 0, 0, 4, 0);
 
-
-
-
-
-
+-- Set foreign key checks
+SET foreign_key_checks = 1;
