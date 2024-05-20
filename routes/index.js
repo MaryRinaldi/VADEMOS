@@ -106,4 +106,73 @@ router.get("/users/:id", function (req, res, next) {
 });
 
 
+router.get("/pcp_fmd", async (req, res) => {
+  try {
+    const response = await db(`SELECT * FROM PCP_FMD`);
+    res.send(response.data);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+router.post("/animal_diseases", async (req, res) => {
+  const newData = req.body; // Assuming the request body contains the data for the new record
+  try {
+    await db(`INSERT INTO Animal_Diseases SET ?`, newData);
+    res.send({ message: "New record added successfully" });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+router.get("/pcp_fmd/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const response = await db(`SELECT * FROM PCP_FMD WHERE id = ${id}`);
+    res.send(response.data);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+router.put("/animal_diseases/:id", async (req, res) => {
+  const { id } = req.params;
+  const newData = req.body; // Assuming the request body contains the updated data
+  try {
+    await db(`UPDATE Animal_Diseases SET ? WHERE event_id = ${id}`, newData);
+    res.send({ message: "Record updated successfully" });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+router.delete("/pcp_fmd/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await db(`DELETE FROM PCP_FMD WHERE id = ${id}`);
+    res.send({ message: "Record deleted successfully" });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+router.get("/animal_diseases/search", async (req, res) => {
+  const { country, disease } = req.query; // Assuming query parameters for filtering
+  try {
+    const response = await db(`SELECT * FROM Animal_Diseases WHERE country = "${country}" AND disease = "${disease}"`);
+    res.send(response.data);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+
+
+
 module.exports = router;

@@ -9,7 +9,7 @@ SET foreign_key_checks = 0;
 DROP TABLE if exists users;
 SET foreign_key_checks = 1;
 
---
+
 -- 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -53,13 +53,9 @@ CREATE TABLE Animal_Diseases (
     slaughtered INT,
     deaths INT,
     vaccinated INT,
-    PRIMARY KEY (event_id, outbreak_id)
 );
 
 --
---
---
-
 INSERT INTO PCP_FMD (id, country, area, roadmap_region, year, pcp_fmd_stage, last_meeting_attended, pso_support) VALUES
 (1178, 'Afghanistan', NULL, 'West Eurasia', 2024, 'PCP-1', 'April 2023', NULL),
 (1183, 'Bahrain', NULL, 'Middle East', 2024, 'PCP-2', 'December 2021', NULL),
@@ -68,18 +64,19 @@ INSERT INTO PCP_FMD (id, country, area, roadmap_region, year, pcp_fmd_stage, las
 (1203, 'Equatorial Guinea', NULL, 'Central Africa', 2024, 'PCP-0', 'September 2022', NULL),
 (1204, 'Eritrea', NULL, 'East Africa', 2024, 'PCP-1', 'March 2022', NULL),
 (1205, 'Eswatini', NULL, 'Southern African Development Community', 2024, NULL, 'November 2020', NULL)
--- 
+ 
 
 -- Insert data into animal disease table
 INSERT INTO Animal_Diseases (year, semester, world_region, country, administrative_division, disease, serotype_subtype_genotype, animal_category, species, event_id, outbreak_id, new_outbreaks, susceptible, measuring_units, cases, killed_disposed, slaughtered, deaths, vaccinated) VALUES
-(2024, 'Jan-Jun 2024', 'Africa', 'Libya', 'Misratah', 'Lumpy skin disease virus (Inf. with)', '-', 'Domestic', 'Cattle', 5091, NULL, 2, 11, 'Animal', 9, 0, 0, 4, 0),
-(2024, 'Jan-Jun 2024', 'Asia', 'Hong Kong', 'North', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 5323, 129771, 1, 489, 'Animal', 2, 489, NULL, NULL, NULL),
-(2024, 'Jan-Jun 2024', 'Asia', 'Hong Kong', 'Yuen Long', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 5323, NULL, 3, 3581, 'Animal', 12, 3581, NULL, NULL, NULL),
-(2024, 'Jan-Jun 2024', 'Asia', 'Korea (Rep. of)', 'Paju', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4345, 130406, 1, 2394, 'Animal', 35, 2375, NULL, 19, NULL),
-(2024, 'Jan-Jun 2024', 'Asia', 'Korea (Rep. of)', 'Yeongdeok', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4345, 130405, 1, 519, 'Animal', 27, 499, NULL, 20, NULL),
-(2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'Bhimad', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131375, 1, 5, 'Animal', 2, NULL, NULL, 2, NULL),
-(2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'MadhyaNepal', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131376, 1, 17, 'Animal', 8, NULL, NULL, 4, NULL)
---
+(2024, 'Jan-Jun 2024', 'Africa', 'Libya', 'Misratah', 'Lumpy skin disease virus (Inf. with)', '-', 'Domestic', 'Cattle', 5091, 0, 2, 11, 'Animal', 9, 0, 0, 4, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Hong Kong', 'North', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 5323, 129771, 1, 489, 'Animal', 2, 489, 0, 0, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Hong Kong', 'Yuen Long', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 5323, 0, 3, 3581, 'Animal', 12, 3581, 0, 0, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Korea (Rep. of)', 'Paju', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4345, 130406, 1, 2394, 'Animal', 35, 2375, 0, 19, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Korea (Rep. of)', 'Yeongdeok', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4345, 130405, 1, 519, 'Animal', 27, 499, 0, 20, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'Bhimad', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131375, 1, 5, 'Animal', 2, 0, 0, 2, 0),
+(2024, 'Jan-Jun 2024', 'Asia', 'Nepal', 'MadhyaNepal', 'African swine fever virus (Inf. with)', '-', 'Domestic', 'Swine', 4458, 131376, 1, 17, 'Animal', 8, 0, 0, 4, 0);
+
+
 
 
 
