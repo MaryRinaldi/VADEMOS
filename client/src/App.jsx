@@ -1,53 +1,54 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
-import Register from './components/pages/Register.jsx';
-import Login from './components/pages/Login.jsx';
-import Private from './components/pages/Private.jsx';
+// import Register from './components/pages/Register.jsx';
+// import Login from './components/pages/Login.jsx';
+// import Private from './components/pages/Private.jsx';
 import HomePage from './components/views/HomePage.jsx';
 import './components/pages/Modal.jsx'
 import NavBar from "./navbar";
+import Tools from './components/views/Tools.jsx';
 
 
 
 function App() {
 
-  const [lightMode, setlightMode] = useState(false);
+  const [darkMode, setdarkMode] = useState(false);
 
   const handleToggle = () => {
-    const newState = !lightMode;
-    setlightMode(newState);
+    const newState = !darkMode;
+    setdarkMode(newState);
   
     if (newState) {
-      document.body.classList.add('light-mode');
-      document.getElementById('root').classList.add('light-mode');
+      document.body.classList.add('dark-mode');
+      document.getElementById('root').classList.add('dark-mode');
     } else {
-      document.body.classList.remove('light-mode');
-      document.getElementById('root').classList.remove('light-mode');
+      document.body.classList.remove('dark-mode');
+      document.getElementById('root').classList.remove('dark-mode');
     }
   };
 
   
   return (
     <>  
-      <div className={`App ${lightMode ? 'light-mode' : ''}`}>
-      <NavBar />
+      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+      <NavBar darkMode={darkMode}/>
       <Routes>
           <Route path="/" element={<HomePage/>} />
-          {/* <Route path="/survey" element={<Survey/>} />
-          <Route path="/tool" element={<Tool/>} /> */}
+          {/* <Route path="/survey" element={<Survey/>} />*/}
+          <Route path="/tools" element={<Tools/>} /> 
           </Routes>
     </div>
     <div className="toggle-container">
         <input
           type="checkbox"
-          id="lightModeSwitch"
-          checked={lightMode}
+          id="darkModeSwitch"
+          checked={darkMode}
           onChange={handleToggle}
-          aria-label={lightMode ? 'Turn on dark mode' : 'Turn on light mode'}
+          aria-label={darkMode ? 'Turn on light mode' : 'Turn on dark mode'}
         />
-<label htmlFor="lightModeSwitch">
-  {lightMode ? 'Light mode' : 'Dark mode'}
+<label htmlFor="darkModeSwitch">
+  {darkMode ? 'Light mode' : 'Dark mode'}
 </label>
       </div>
       <div className="footer">

@@ -7,7 +7,10 @@
 
   @media only screen and (max-height: 400px) {
     body, #root {
-      background: rgba(41, 49, 43, 0.8); 
+      background: rgba(247, 253, 245, 0.8); 
+    }
+    .dark-mode body, .dark-mode #root {
+      background: rgba(38, 50, 41, 0.8); 
     }
   
     .App {
@@ -19,6 +22,10 @@
       margin-top: 5%; 
       margin-bottom: 5%; 
     }
+
+    /* .dark-mode .App {
+      background-color: rgba(38, 50, 41, 0.8);
+    } */
   
   }
 
@@ -46,13 +53,20 @@
 
 @media only screen and (max-width: 600px) {
     body, #root {
-      background: rgba(41, 49, 43, 0.8);
+      background: rgba(247, 253, 245, 0.8) ;
     }
+    .dark-mode body, .dark-mode #root {
+      background: rgba(38, 50, 41, 0.8); 
+    }
+  
   
     .App {
       padding: 0px;
       max-height: 90%;
       max-width: 90%;
+    }
+    .dark-mode .App {
+      background-color: rgba(38, 50, 41, 0.8);
     }
   
     h2 {
@@ -68,7 +82,7 @@
       top: 0;
       right: 0;
     }
-
+/* 
     .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
       background-color: white;
       border: 1px solid #ccc;
@@ -81,14 +95,14 @@
       right: 1%; 
       max-width: 100px;
       min-width: 50%;
-    }
-
+    } */
+/* 
     .mapboxgl-ctrl-icon {
       max-width: 90px;
       min-width: 30%;
       padding: 0px 0px;
       font-size: 5px;
-    }
+    } */
 
     .catchphrase {
       max-width: 200px;
@@ -101,8 +115,8 @@
 
   @media only screen and (min-width: 600px) {
     .App, .container, h4 {
-        max-height: none;
-        max-width: none;
+        max-height: 90%;
+        max-width: 90%;
     }
 
     .catchphrase {

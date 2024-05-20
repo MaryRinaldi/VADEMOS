@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({darkMode}) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-link">Home</Link>
-        <Link to="/survey" className="navbar-link">Survey</Link>
-        <Link to="/tool" className="navbar-link">Tool</Link>
-        <Link to="/Contact" className="navbar-link">Contact</Link>
+        <Link to="/" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Home</Link>
+        <Link to="/survey" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Survey</Link>
+        <Link to="/tools" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Tools</Link>
+        <Link to="/Contact" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Contact</Link>
       </div>
     </nav>
   );

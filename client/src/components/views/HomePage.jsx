@@ -33,11 +33,11 @@ return (
 <>
 <div className="Frontpage">
 <div className="title">
-        <h1>VADEMOS</h1>
-        <h2>Vaccine Demand Estimation Model - FMD</h2>
+        <h2>VADEMOS</h2>
+        <h3>Vaccine Demand Estimation Model - FMD</h3>
       </div>
       <div className='register_form'>
-      <h3> Sign Up for access.</h3>  
+      <h4> Sign Up for access.</h4>  
       <ul> 
           <li><button onClick={() => openModal(<Register closeModal={closeModal} goToLogin={()=>switchModal(<Login/>)} />)}>Register</button></li>
           <li><button onClick={() => openModal(<Login closeModal={closeModal} goToRegister={()=>switchModal(<Register/>)} />)}>Login</button></li>
@@ -96,9 +96,9 @@ Full details on the model, including distributions used for each parameter, will
            </p>
            <br></br>
            <br></br>
-           <p><a href="https://www.fao.org/contact-us/terms/db-terms-of-use/en">Statistical Database Terms of Use</a></p>
+           <p><a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Statistical Database Terms of Use</a></p>
         <p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons License</a></p>
-        <p><i>This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO license (CC BY-NC-SA 3.0 IGO; <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">CC BY-NC-SA 3.0 IGO</a>). In addition to this license, some database specific terms of use are listed: <a href="https://www.fao.org/contact-us/terms/db-terms-of-use/en">Terms of Use of Datasets</a>.</i></p>
+        <p><i>This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO license (CC BY-NC-SA 3.0 IGO; <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">CC BY-NC-SA 3.0 IGO</a>). In addition to this license, some database specific terms of use are listed: <a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Terms of Use of Datasets</a>.</i></p>
       </div>  
       <div className="modal-container">
   {showModal && <Modal showModal={showModal} closeModal={closeModal} modalContent={modalContent} />}

@@ -1,10 +1,11 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgb(41, 49, 43)
+  background-color: rgb(255, 255, 255)
 }
 
 #root {
@@ -12,11 +13,14 @@ body {
   line-height: 1.5;
   font-weight: 400;
   margin: 0 auto;
-  padding: 2rem;
-  color: white;
-  background-color: rgb(41, 49, 43);
-  width: 98%;
+  padding: 1rem;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
 
 
@@ -25,25 +29,24 @@ h1 {
   line-height: 1.1;
 }
 
-h3 {
+h4 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: left;
   padding-left: 2%;
-  margin-left: 2%;
   margin-right: 60%;
   font-size: 18px;
   font-weight: 400;
 }
 
-.dashboard_title {
+/* .dashboard_title {
   font-size: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding-left: 0%;
   margin-right: 0%;
-}
+} */
 
-
+/* 
 .logoimage {
   width: 16%;
   border-width: 0px;
@@ -59,21 +62,28 @@ h3 {
   padding: 0;
   margin: 0;
   border-radius: 20px;
-}
+} */
 
-.frontlogoimage {
+/* .frontlogoimage {
   margin-top: 3%;
   margin-bottom: 4%;
   width: 28%;
   height: 28%;
   border-width: 5px;
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.9);
+} */
+
+.tools-container {
+  margin: 1%;
 }
 
-.frontlogocontainer {
+.navbar-container {
   display: flex;
   justify-content: center;
-  margin: 2%;
+  margin: 1% auto;
+  position: fixed;
+  top: -5%;
+  width: 100%;
 }
 
 .logocontainer {
@@ -91,7 +101,6 @@ h3 {
   border: 1.5px solid transparent;
   border-style:groove;
   border-color: aliceblue; */
-  margin-left: 2%;
   padding: 0.1em 0.6em 0.2em 0.6em;
   font-size: 1em;
 }
@@ -110,6 +119,15 @@ h3 {
   /* background-color: rgb(244, 235, 236); */
 }
 
+.navbar-link.dark-mode {
+  font-weight: 500;
+  color: white;
+  text-decoration: underline;
+  font-size: 1em;
+  padding: 0.1em 0.6em 0.2em 0.6em;
+  margin: 1% 0% 1% 0%;
+}
+
 .link:hover, a:hover {
   color: #1b7033;
   border-color: #1b7033;
@@ -125,12 +143,7 @@ ul {
   padding: 0;
 }
 
-li {
-  margin-left: 2%;
-}
-
-
-
+/* 
 .dashboard .button_container {
   position: absolute;
   top: 2%;
@@ -140,9 +153,9 @@ li {
   align-items: center; 
   margin-right: 2.5%;
   margin-top: 4%;
-}
+} */
 
-button, .profile-button {
+button {
   /* border-radius: 8px;
   border: 2px solid transparent;
   border-style: groove; */
@@ -172,7 +185,6 @@ button, .profile-button {
   transition: 0.25s;
   min-width: 50px;
   border-color: aliceblue;
-  margin-left: 2%;
   margin-bottom: 1%;
 
 }
@@ -188,41 +200,33 @@ button:hover {
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
-
+/*
 .custom-alert {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f8d7da; /* Custom background color */
-  color: #721c24; /* Custom text color */
+  background-color: #f8d7da; 
+  color: #721c24;
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+} 
+*/
 
-.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 5px 10px;
-  font-size: 12px;
-  color: #333;
-  position: absolute;
-  top: 100%; 
-  right: 1%; 
-}
 
-.mapboxgl-ctrl-geocoder.mapboxgl-ctrl:focus {
-  outline: none;
-  border-color: #4264fb; 
-}
+.map-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
 #map-container {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding-left: 2%;
-  margin-left: 2%;
 }
 
 .modal-overlay {
@@ -265,9 +269,9 @@ input {
   left: 1%;
 }
 
-#root.light-mode {
-  background-color: white;
-  color: black;
+#root.dark-mode {
+  background-color: rgb(38, 50, 41);
+  color: white;
 }
 
 input[type="checkbox"] {
