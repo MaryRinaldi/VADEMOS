@@ -1,10 +1,12 @@
 var express = require("express");
 var router = express.Router();
 const mapboxSdk = require("@mapbox/mapbox-sdk");
+const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+
 const geocodingClient = mapboxSdk({
-  accessToken:
-    "",
+  accessToken: accessToken,
 }).geocoding;
+
 const db = require("../model/helper");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
@@ -65,7 +67,7 @@ router.get("/private", async (req, res) => {
     //verify token and extract payload that includes user id (⇒ `jwt.verify()`)
     let payload = jwt.verify(token, supersecret);
     let result = await db(`SELECT * FROM users WHERE id = ${payload.userId}`);
-    res.send(result.data[0]);
+    res.send(result.data[0]); 
   } catch (err) {
     res.status(500).send(err);
   }

@@ -25,7 +25,8 @@ con.connect(function(err) {
     console.log("Table creation `items` was successful!");
 
     console.log("Closing...");
+    con.end();
   });
 
-  con.end();
+  
 });
