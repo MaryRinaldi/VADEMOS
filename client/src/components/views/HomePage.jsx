@@ -36,13 +36,13 @@ return (
         <h2>VADEMOS</h2>
         <h3>Vaccine Demand Estimation Model - FMD</h3>
       </div>
-      <div className='register_form'>
+      {/* <div className='register_form'>
       <h4> Sign Up for access.</h4>  
       <ul> 
           <li><button onClick={() => openModal(<Register closeModal={closeModal} goToLogin={()=>switchModal(<Login/>)} />)}>Register</button></li>
           <li><button onClick={() => openModal(<Login closeModal={closeModal} goToRegister={()=>switchModal(<Register/>)} />)}>Login</button></li>
           </ul>
-      </div>
+      </div> */}
       <div className="paragraph">
         <p>
           VADEMOS is a decision-support tool intended to be used to estimate current and future vaccine dose demand for Foot-and-Mouth disease (FMD) at a national and regional level.  It aims to bridge the gap between FMD vaccine demand and vaccine production/supply in endemic countries. It is a stochastic quantitative model which uses predictors of vaccine dose demand such as livestock population forecast, disease control policy related to projected FMD Progressive Control Pathway (PCP) stage, vaccination schedule and outbreak forecasting. Summary details of the inputs of VADEMOS are discussed below.
@@ -91,14 +91,13 @@ The tool is intended to be flexible to country requirements, and therefore the i
           <br></br>
 Full details on the model, including distributions used for each parameter, will be available to download from this site within the near future. Meanwhile for more detail information please get in touch via the email address as follows: eufmd@fao.org
 <br></br>
-          <br></br>
-<i>This tool is a simulation model that has been developed by the EuFMD under its 2019-2021 workplan as part of Pillar III, Component 3.4. </i>
-           </p>
+<br></br>
+          <br></br></p>
+<p><i>This tool is a simulation model that has been developed by the EuFMD under its 2019-2021 workplan as part of Pillar III, Component 3.4. </i> 
            <br></br>
-           <br></br>
-           <p><a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Statistical Database Terms of Use</a></p>
-        <p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons License</a></p>
-        <p><i>This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO license (CC BY-NC-SA 3.0 IGO; <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">CC BY-NC-SA 3.0 IGO</a>). In addition to this license, some database specific terms of use are listed: <a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Terms of Use of Datasets</a>.</i></p>
+           <a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Statistical Database Terms of Use</a><br></br>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons License</a><br></br>
+        <i>This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO license (CC BY-NC-SA 3.0 IGO; <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">CC BY-NC-SA 3.0 IGO</a>). In addition to this license, some database specific terms of use are listed: <a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Terms of Use of Datasets</a>.</i></p>
       </div>  
       <div className="modal-container">
   {showModal && <Modal showModal={showModal} closeModal={closeModal} modalContent={modalContent} />}

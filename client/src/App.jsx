@@ -9,6 +9,7 @@ import './components/pages/Modal.jsx'
 import NavBar from "./navbar";
 import Tools from './components/views/Tools.jsx';
 import Feedback from './components/views/Feedback.jsx'
+import Funded from './assets/EN-Funded by the EU-WHITE.png';
 
 
 
@@ -53,15 +54,13 @@ function App() {
   {darkMode ? 'Light mode' : 'Dark mode'}
 </label>
       </div>
-      <div className="footer">
-      <footer>
-        <p>European Commission for the Control of Foot-and-Mouth Disease</p>
-        <p>FAST-HOLD strategy. Foot-and-mouth and similar transboundary animal diseases</p>
-        <p>www.fao.eufmd.org</p>
-        <p>© 2021 | EuFMD</p>
+      <footer className="footer" >
+      <img src={Funded} alt="Funded by EU" className="funded_logo" />
+        <p>European Commission for the Control of Foot-and-Mouth Disease.<br></br>
+        FAST-HOLD strategy. Foot-and-mouth and similar transboundary animal diseases.<br></br>
+        www.fao.eufmd.org</p>
+        <p>&copy; {new Date().getFullYear()} | EuFMD</p>
       </footer>    
-      <p>&copy; {new Date().getFullYear()} VADEMOS. All rights reserved.</p>
-    </div>
     </>
   );
 }

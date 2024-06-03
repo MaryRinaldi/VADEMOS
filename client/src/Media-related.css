@@ -8,9 +8,10 @@
   @media only screen and (max-height: 400px) {
     body, #root {
       background: rgba(247, 253, 245, 0.8); 
+      font-size: 14px;
     }
     .dark-mode body, #root.dark-mode {
-      background: rgba(38, 50, 41, 0.8); 
+      background: #155B46 ;
     }
   
     .App {
@@ -32,14 +33,14 @@
       max-width: 90%;
     }
 
-    .footer {
+    .footer, .navbar {
       position: relative;
       bottom: -1%;
       left: 0;
       width: 100%;
-      padding: 1%;
+      padding: 0%;
       text-align: center;
-      font-size: 8px;
+      font-size: 11px;
     }
     
 
@@ -48,12 +49,12 @@
 
 @media only screen and (max-width: 600px) {
     body, #root {
-      background: rgba(247, 253, 245, 0.8) ;
+      background: rgba(247, 253, 245) ;
+      font-size: 14px;
     }
      body.dark-mode, #root.dark-mode {
-      background: rgba(38, 50, 41, 0.8); 
+      background: #155B46 ; 
     }
-  
   
     .App {
       padding: 0px;
@@ -61,7 +62,7 @@
       max-width: 90%;
     }
     .dark-mode .App {
-      background-color: rgba(38, 50, 41, 0.8);
+      background-color: #155B46 ;
     }
   
     h2 {
@@ -84,13 +85,6 @@
     .App, .container, h4 {
         max-height: 90%;
         max-width: 90%;
-    }
-
-    .catchphrase {
-      max-width: 200px;
-      min-width: 80%;
-      padding: 0px 0px;
-
     }
 
     
