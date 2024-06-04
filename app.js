@@ -9,6 +9,8 @@ var indexRouter = require("./routes/index");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(cors()); // add after 'app' is created
 app.use(logger("dev"));
 app.use(express.json());
@@ -20,6 +22,14 @@ app.use(cookieParser());
 app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message, code: err.code });
   });
+
+app.get('/', (req, res) => {
+  res.send('')
+})
+
+app.listen(port, () => {
+  console.log('APP Listening')
+})
 
   
 app.use("/api", indexRouter);
