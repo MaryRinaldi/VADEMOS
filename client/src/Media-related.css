@@ -19,6 +19,11 @@
       max-height: 90%;
       max-width: 90%;
     }
+
+    .modal-content  {
+      max-height: 70%;
+      max-width: 70%;
+    }
     h2 {
       margin-top: 5%; 
       margin-bottom: 5%; 
@@ -31,6 +36,11 @@
       padding: 0px;
       max-height: 90%;
       max-width: 90%;
+    }
+
+    .modal-content  {
+      max-height: 70%;
+      max-width: 70%;
     }
 
     .footer, .navbar {
