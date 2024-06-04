@@ -100,7 +100,7 @@ Full details on the model, including distributions used for each parameter, will
            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">Creative Commons License</a><img src={CCLogo} alt="Creative Commons logo" className="cc_logo" /><br></br>
         <i>This work is made available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO license (CC BY-NC-SA 3.0 IGO; <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/igo/">CC BY-NC-SA 3.0 IGO</a>). In addition to this license, some database specific terms of use are listed: <a href="https://www.fao.org/Contact-us/terms/db-terms-of-use/en">Terms of Use of Datasets</a>.</i></p>
       </div>  
-      <div className="modal-container">
+      <div>
   {showModal && <Modal showModal={showModal} closeModal={closeModal} modalContent={modalContent} />}
 </div>
       <Outlet />      

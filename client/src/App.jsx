@@ -58,8 +58,8 @@ function App() {
       <img src={Funded} alt="Funded by EU" className="funded_logo" />
         <p>European Commission for the Control of Foot-and-Mouth Disease.<br></br>
         FAST-HOLD strategy. Foot-and-mouth and similar transboundary animal diseases.<br></br>
-        www.fao.eufmd.org</p>
-        <p>&copy; {new Date().getFullYear()} | EuFMD</p>
+        www.fao.eufmd.org<br></br>
+        &copy; {new Date().getFullYear()} | EuFMD</p>
       </footer>    
     </>
   );

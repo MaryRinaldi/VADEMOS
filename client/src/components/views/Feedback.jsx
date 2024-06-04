@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from '../pages/Modal';
 
 const Feedback = () => {
-  const [showModal, setShowModal] = useState(false);
   const [feedback, setFeedback] = useState({
     usabilityMap: 0,
     usabilityPredictionTool: 0,
@@ -27,16 +26,63 @@ const Feedback = () => {
 
     if (response.ok) {
       alert('Feedback submitted successfully!');
+      setFeedback({
+        countryRepresented: '',
+        regionRepresented: '',
+        usabilityTool: '',
+        usabilityMap: 0,
+        usabilityPredictionTool: 0,
+        additionalComments: '',
+        overallExperience: 0,
+        featureRequests: '',
+      });
       setShowModal(false);
     } else {
       alert('Failed to submit feedback');
     }
   };
 
-  const modalContent = (
+  return (
+    <>
     <form onSubmit={handleSubmit}>
-      <h3>We appreciate your feedback</h3>
-      
+      <h3>We appreciate your feedback</h3>  
+      <label>
+      Country of representation:
+        <textarea
+          name="countryRepresented"
+          value={feedback.countryRepresented}
+          onChange={handleInputChange}
+        />
+      </label>
+      <label>
+      Region of representation:
+        <textarea
+          name="regionRepresented"
+          value={feedback.regionRepresented}
+          onChange={handleInputChange}
+        />
+      </label>
+      <label id='radioLabel'>
+  You used VADEMOS to:
+    <input
+      type="radio"
+      name="usabilityTool"
+      value="predict vaccination needed"
+      checked={feedback.usabilityTool === "predict vaccination needed"}
+      onChange={handleInputChange}
+      required
+    />
+     <span className="radioInputText">Predict vaccination needed</span>
+    <input
+      type="radio"
+      name="usabilityTool"
+      value="understand outbreaks"
+      checked={feedback.usabilityTool === "understand outbreaks"}
+      onChange={handleInputChange}
+      required
+    />
+     <span className="radioInputText">Understand outbreaks</span>
+</label>
       <label>
         Usability of the map:
         <input
@@ -51,7 +97,7 @@ const Feedback = () => {
       </label>
 
       <label>
-        Comments about the map:
+      Comments about the map:
         <textarea
           name="additionalComments"
           value={feedback.additionalComments}
@@ -73,7 +119,7 @@ const Feedback = () => {
       </label>
 
       <label>
-        What functionalities would you like in VADEMOS?
+        What functionalities would you like to see in VADEMOS?
         <textarea
           name="featureRequests"
           value={feedback.featureRequests}
@@ -93,19 +139,10 @@ const Feedback = () => {
           required
         />
       </label>
-
-      <button type="submit">Submit Feedback</button>
+      <br></br>
+      <button type="submit" className='submit-button'>Submit Feedback</button>
     </form>
-  );
-
-  return (
-    <div id="feedback">
-      <h3>Feedback Survey</h3>
-      <button className="home-button" onClick={() => setShowModal(true)}>
-        Give Feedback
-      </button>
-      <Modal showModal={showModal} closeModal={() => setShowModal(false)} modalContent={modalContent} />
-    </div>
+    </>
   );
 };
 
