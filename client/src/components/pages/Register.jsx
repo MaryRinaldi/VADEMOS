@@ -53,7 +53,7 @@ function Register({ goToLogin }) {
         // Send welcome email
         sendWelcomeEmail(newUser.userEmail);
         // Redirect user to login page
-        navigate("/login");
+        navigate("/");
       } else {
         let error = await results.json(); // Get the error message from the server
         if (error.code === "ER_DUP_ENTRY") {
@@ -67,7 +67,7 @@ function Register({ goToLogin }) {
     }
   };
   return (
-    <div className="register_form">
+    <div className="register-form">
       <h3 className="page-header">Need to register?</h3>
       <input
         value={newUser.userName}

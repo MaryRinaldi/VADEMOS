@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
-// import Register from './components/pages/Register.jsx';
-// import Login from './components/pages/Login.jsx';
-// import Private from './components/pages/Private.jsx';
+import Register from './components/pages/Register.jsx';
+import Login from './components/pages/Login.jsx';
+import Private from './components/pages/Private.jsx';
 import HomePage from './components/views/HomePage.jsx';
 import './components/pages/Modal.jsx'
 import NavBar from "./navbar";
@@ -38,8 +38,10 @@ function App() {
       <NavBar darkMode={darkMode}/>
       <Routes>
           <Route path="/" element={<HomePage/>} />
-          <Route path="/feedback" element={<Feedback/>} />
-          <Route path="/tools" element={<Tools/>} /> 
+          <Route path="/register" element={<Register  />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/feedback" element={<Private><Feedback/></Private>} />
+          <Route path="/tools" element={<Private><Tools/></Private>} /> 
           </Routes>
     </div>
     <div className="toggle-container">

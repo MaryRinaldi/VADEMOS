@@ -58,7 +58,7 @@ h4 {
 .navbar-container {
   display: flex;
   justify-content: center;
-  margin-top: 1%;
+  margin-top: 0.7%;
   align-items: center;
   position: fixed;
   top: -3%;
@@ -75,12 +75,14 @@ h4 {
 .logo {
   height: 100px; 
   width: auto;
-  margin-right: 20px; 
+  margin-right: 50px;
+  margin-left: -2%; 
 }
 
 .funded_logo {
-  height: 50px; 
+  height: 45px; 
   width: auto;
+  margin-left: 5%;
   margin-top: 0.3%;
 }
 
@@ -105,8 +107,8 @@ p {
   font-weight: 500;
   color: #ffffff;
   text-decoration: underline;
-  font-size: 1em;
-  padding: 0.1em 0.6em 0.2em 0.6em;
+  font-size: 16px;
+  padding: 0.1em 0.8em 0.4em 0.8em;
   margin: 1% 0% 1% 0%;
 }
 
@@ -131,10 +133,22 @@ p {
   text-decoration: none;
 }
 
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d0e0f2;
+  color: #1b7033;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
 a, li {
   color: #82A627;
   list-style-type: none;
-  margin: 2% 0% 2% 0%;
 }
 
 ul {
@@ -143,7 +157,7 @@ ul {
 
 button, .home-button {
   padding: 0.1em 0.6em 0.2em 0.6em;
-  margin: 2%;
+  margin: 0.5%;
   font-size: 1em; 
   font-weight: 600;
   color: #005A37 ;
@@ -153,6 +167,19 @@ button, .home-button {
   border-radius: 8px;
   transition: 0.25s;
   min-width: 50px;
+  border-color: #82A627;
+}
+.password-button {
+  padding: 0.1em 0.1em 0.2em 0.1em;
+  font-size: 0.8em; 
+  font-weight: 600;
+  color: #005A37 ;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.25s;
+  max-width: 60%;
+  max-height: 10%;
   border-color: #82A627;
 }
 
@@ -200,6 +227,19 @@ button, .home-button {
   border: 2px solid;
   border-radius: 24px;
   border-color: black;
+  color: black;
+}
+
+.register-form {
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  margin: 1%;
+  z-index: 1000;
+  overflow-y: auto;
+  font-size: 16px;
+  color: black;
 }
 
 form {
@@ -279,7 +319,14 @@ textarea {
 }
 
 input {
-  display: block; 
+  display: block;
+  padding: 0.5rem;
+  margin: 1%;
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: #82A627;
+  box-sizing: border-box;
+  overflow-y: auto; 
 }
 
 .toggle-container {
@@ -344,7 +391,7 @@ input:checked + .toggleLabel::after {
   margin-bottom: auto;
   left: 0;
   font-size: 1em;
-  width: 100%;
+  width: 99%;
   height: 7rem; 
   z-index: 900;
   display: flex;

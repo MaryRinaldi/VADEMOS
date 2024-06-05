@@ -58,6 +58,9 @@ CREATE TABLE Animal_Diseases (
 -- create feedback table
 CREATE TABLE feedback (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    countryRepresented TEXT,
+    regionRepresented TEXT,
+    useForTool VARCHAR(255) NOT NULL,
     usabilityMap INT NOT NULL,
     usabilityPredictionTool INT NOT NULL,
     additionalComments TEXT,

@@ -37,13 +37,15 @@ return (
         <h2>VADEMOS</h2>
         <h3>Vaccine Demand Estimation Model - FMD</h3>
       </div>
-      {/* <div className='register_form'>
+      {!token && (
+      <div className='register_form'>
       <h4> Sign Up for access.</h4>  
       <ul> 
           <li><button onClick={() => openModal(<Register closeModal={closeModal} goToLogin={()=>switchModal(<Login/>)} />)}>Register</button></li>
           <li><button onClick={() => openModal(<Login closeModal={closeModal} goToRegister={()=>switchModal(<Register/>)} />)}>Login</button></li>
           </ul>
-      </div> */}
+      </div>
+      )}
       <div className="paragraph">
         <p>
           VADEMOS is a decision-support tool intended to be used to estimate current and future vaccine dose demand for Foot-and-Mouth disease (FMD) at a national and regional level.  It aims to bridge the gap between FMD vaccine demand and vaccine production/supply in endemic countries. It is a stochastic quantitative model which uses predictors of vaccine dose demand such as livestock population forecast, disease control policy related to projected FMD Progressive Control Pathway (PCP) stage, vaccination schedule and outbreak forecasting. Summary details of the inputs of VADEMOS are discussed below.
