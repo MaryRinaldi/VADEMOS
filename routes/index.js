@@ -1,25 +1,22 @@
 var express = require("express");
 var router = express.Router();
 const mapboxSdk = require("@mapbox/mapbox-sdk");
-const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
-
-
-const geocodingClient = mapboxSdk({
-  accessToken: accessToken,
-}).geocoding;
-
-const feedbackRoutes = require('./feedbackRoutes');
-router.use(feedbackRoutes);
-
 const db = require("../model/helper");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
-const app = require("../app");
+const feedbackRoutes = require('./feedbackRoutes');
 
+
+const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+const geocodingClient = mapboxSdk({ accessToken: accessToken}).geocoding;
 // variables needed for bcrypt to do the encryption
 const saltRounds = 10;
 const supersecret = process.env.SUPER_SECRET;
+
+router.use(feedbackRoutes);
+
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.send({ title: "Express" });
@@ -174,9 +171,5 @@ router.get("/animal_diseases/search", async (req, res) => {
     res.status(500).send(err);
   }
 });
-
-
-
-
 
 module.exports = router;

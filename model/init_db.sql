@@ -1,3 +1,5 @@
+-- Rename to match if necessary, currently assuming it is `init_db.sql`
+
 -- Drop Tables
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS PCP_FMD;
