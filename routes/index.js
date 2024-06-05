@@ -5,7 +5,6 @@ const db = require("../model/helper");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
-const feedbackRoutes = require('./feedbackRoutes');
 
 
 const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
