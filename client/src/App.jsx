@@ -38,8 +38,10 @@ function App() {
       <NavBar darkMode={darkMode}/>
       <Routes>
           <Route path="/" element={<HomePage/>} />
-          <Route path="/feedback" element={<Feedback/>} />
-          <Route path="/tools" element={<Tools/>} /> 
+          <Route path="/register" element={<Register  />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/feedback" element={<Private><Feedback/></Private>} />
+          <Route path="/tools" element={<Private><Tools/></Private>} /> 
           </Routes>
     </div>
     <div className="toggle-container">

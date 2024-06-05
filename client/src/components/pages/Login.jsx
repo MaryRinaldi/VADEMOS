@@ -83,8 +83,8 @@ function Login({ goToRegister }) {
   
 
   return (
-    <div className="register_form">
-      <h3 className="page-header">Hello, please log in!</h3>
+    <div className="register-form">
+      <h3 className="page-header">Welcome back! Please login to use VADEMOS.</h3>
       <input
         value={credentials.userName}
         onChange={handleChange}
@@ -127,11 +127,9 @@ function Login({ goToRegister }) {
           </>
         ) : (
           <button
-            className="home-button"
+            className="password-button"
             onClick={handleForgotPasswordClick}
-          >
-            Forgot Password
-          </button>
+          >Forgot Password </button>
         )}
       </div>
     </div>
