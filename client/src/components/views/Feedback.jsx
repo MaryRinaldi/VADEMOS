@@ -3,11 +3,14 @@ import Modal from '../pages/Modal';
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState({
-    usabilityMap: 0,
-    usabilityPredictionTool: 0,
-    additionalComments: '',
-    overallExperience: 0,
-    featureRequests: '',
+        countryRepresented: '',
+        regionRepresented: '',
+        useForTool: '',
+        usabilityMap: 0,
+        usabilityPredictionTool: 0,
+        additionalComments: '',
+        overallExperience: 0,
+        featureRequests: '',
   });
 
   const handleInputChange = (event) => {
@@ -29,7 +32,7 @@ const Feedback = () => {
       setFeedback({
         countryRepresented: '',
         regionRepresented: '',
-        usabilityTool: '',
+        useForTool: '',
         usabilityMap: 0,
         usabilityPredictionTool: 0,
         additionalComments: '',
@@ -66,16 +69,16 @@ const Feedback = () => {
   You used VADEMOS to:
     <input
       type="radio"
-      name="usabilityTool"
-      value="predict vaccination needed"
-      checked={feedback.usabilityTool === "predict vaccination needed"}
+      name="useForTool"
+      value="predict vaccination need"
+      checked={feedback.useForTool === "predict vaccination need"}
       onChange={handleInputChange}
       required
     />
-     <span className="radioInputText">Predict vaccination needed</span>
+     <span className="radioInputText">Predict vaccination need</span>
     <input
       type="radio"
-      name="usabilityTool"
+      name="useForTool"
       value="understand outbreaks"
       checked={feedback.usabilityTool === "understand outbreaks"}
       onChange={handleInputChange}
