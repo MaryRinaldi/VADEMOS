@@ -60,7 +60,7 @@ function Login({ goToRegister }) {
         // Store token in localStorage
         localStorage.setItem("token", data.token);
         // Redirect user to HomePage
-        navigate("/homepage");
+        navigate("/private");
       } else {
         setError("Invalid username or password");
         // Send recovery password email

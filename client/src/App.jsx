@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
-// import Register from './components/pages/Register.jsx';
-// import Login from './components/pages/Login.jsx';
-// import Private from './components/pages/Private.jsx';
+import Register from './components/pages/Register.jsx';
+import Login from './components/pages/Login.jsx';
+import Private from './components/pages/Private.jsx';
 import HomePage from './components/views/HomePage.jsx';
 import './components/pages/Modal.jsx'
 import NavBar from "./navbar";
