@@ -23,6 +23,7 @@
     .modal-content  {
       max-height: 70%;
       max-width: 70%;
+      color: black;
     }
     h2 {
       margin-top: 5%; 
@@ -51,6 +52,7 @@
     .modal-content  {
       max-height: 70%;
       max-width: 70%;
+      color: black;
     }
 
     .footer, .navbar {
