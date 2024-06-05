@@ -14,8 +14,6 @@ const geocodingClient = mapboxSdk({ accessToken: accessToken}).geocoding;
 const saltRounds = 10;
 const supersecret = process.env.SUPER_SECRET;
 
-router.use(feedbackRoutes);
-
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -73,6 +71,24 @@ router.get("/private", async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+
+router.post('/feedback', async (req, res) => {
+  const { countryRepresented, regionRepresented, useForTool, usabilityMap, usabilityPredictionTool, additionalComments, overallExperience, featureRequests } = req.body;
+  
+  try {
+    const sql = `
+      INSERT INTO feedback (usabilityMap, usabilityPredictionTool, additionalComments, overallExperience, featureRequests)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `;
+    await db(sql, [countryRepresented, regionRepresented, useForTool, usabilityMap, usabilityPredictionTool, additionalComments, overallExperience, featureRequests]);
+    res.status(200).send('Feedback submitted successfully');
+  } catch (error) {
+    console.error('Failed to insert feedback:', error);
+    res.status(500).send('Failed to submit feedback');
+  }
+});
+
 
 // Route for reversed geocoding
 router.get("/reverse-geocoding", async (req, res) => {
