@@ -58,7 +58,7 @@ h4 {
 .navbar-container {
   display: flex;
   justify-content: center;
-  margin-top: 1%;
+  margin-top: 0.7%;
   align-items: center;
   position: fixed;
   top: -3%;
@@ -344,7 +344,7 @@ input:checked + .toggleLabel::after {
   margin-bottom: auto;
   left: 0;
   font-size: 1em;
-  width: 100%;
+  width: 99%;
   height: 7rem; 
   z-index: 900;
   display: flex;
