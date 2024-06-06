@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-// import 'mapbox-gl/dist/mapbox-gl.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import "../../App.css";
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFyeXJpbmFsZGkiLCJhIjoiY2x3Nm1jNm05MXJjNjJxbDg1Mjg4d3lzayJ9.l2G9x4-qP7Nxo_nOE-jWeA'; 
+const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoibWFyeXJpbmFsZGkiLCJhIjoiY2x3Nm1jNm05MXJjNjJxbDg1Mjg4d3lzayJ9.l2G9x4-qP7Nxo_nOE-jWeA'; 
 
 function MapComponent() {
     // const [map, setMap] = useState(null);
@@ -16,7 +16,8 @@ function MapComponent() {
           container: mapContainer.current,
           style: 'mapbox://styles/mapbox/streets-v11',
           center: [12.4964, 41.9028],
-          zoom: 12
+          zoom: 12,
+          accessToken: MAPBOX_ACCESS_TOKEN,
         });
     
         return () => map.remove();

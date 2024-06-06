@@ -1,14 +1,13 @@
 var express = require("express");
 var router = express.Router();
 const mapboxSdk = require("@mapbox/mapbox-sdk");
+const geocodingClient = mapboxSdk({
+  accessToken:"sk.eyJ1IjoibWFyeXJpbmFsZGkiLCJhIjoiY2x4Mzl6dzZ4MHd4azJscXU3cmlyZW11YyJ9.BigKJV4zaKEvvVEMcCAuSw", }).geocoding;
 const db = require("../model/helper");
 require("dotenv").config();
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
-
-
-const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
-const geocodingClient = mapboxSdk({ accessToken: accessToken}).geocoding;
+const app = require("../app");
 // variables needed for bcrypt to do the encryption
 const saltRounds = 10;
 const supersecret = process.env.SUPER_SECRET;
