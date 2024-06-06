@@ -5,10 +5,23 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.5);
   overflow: auto;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
   color: rgb(0, 0, 0);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/EUFMD_background.jpg');
+  opacity: 0.1;
+  z-index: -1;
+  background-size: cover; /* Imposta la dimensione dell'immagine per coprire l'intero elemento */
+  background-repeat: repeat;
 }
 
 #root {
@@ -16,7 +29,6 @@ body {
   font-weight: 400;
   margin: 0 auto;
   padding-top: 5rem;
-  background-color: white;
   width: 100%;
   position: relative;
   display: flex;
@@ -40,14 +52,33 @@ h1 {
   line-height: 1.1;
 }
 
-h4 {
+.register_form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: left;
-  padding-left: 2%;
-  margin-right: 60%;
   font-size: 18px;
   font-weight: 400;
-  border-radius: 8px;
+  border-radius: 24px;
+  display:flex;
+  justify-content:space-evenly;
+  height: auto;
+  width: 40%;
+  margin: 0 30%;
+  padding: 0;
+}
+
+.home-button {
+  padding: 0.1em 0.6em 0.2em 0.6em;
+  margin: 6% 0 5% 0;
+  font-size: 1em; 
+  font-weight: 600;
+  border-color: #82A627 ;
+  font-family: inherit;
+  color: #005A37 ;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: 0.25s;
+  min-width: 50px;
+  background-color: #82A627;
 }
 
 .tools-container {
@@ -142,7 +173,7 @@ p {
   background-color: rgba(130, 166, 39, 0.9);
   color: #2a5b92; 
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 24px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-weight: 600;
   z-index: 1500;
@@ -158,7 +189,7 @@ ul {
   padding: 0;
 }
 
-button, .home-button {
+button {
   padding: 0.1em 0.6em 0.2em 0.6em;
   margin: 0.5%;
   font-size: 1em; 
@@ -167,11 +198,12 @@ button, .home-button {
   font-family: inherit;
   color: #005A37 ;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 16px;
   transition: 0.25s;
   min-width: 50px;
   background-color: #82A627;
 }
+
 .password-button {
   padding: 0.1em 0.1em 0.2em 0.1em;
   font-size: 0.8em; 
@@ -179,7 +211,7 @@ button, .home-button {
   color: #005A37 ;
   font-family: inherit;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 16px;
   transition: 0.25s;
   max-width: 60%;
   max-height: 10%;
@@ -301,7 +333,7 @@ textarea {
   padding: 0.5rem;
   margin: 2%;
   border: 2px solid;
-  border-radius: 8px;
+  border-radius: 16px;
   border-color: #82A627;
   box-sizing: border-box;
   overflow-y: auto; 
@@ -326,7 +358,7 @@ input {
   padding: 0.5rem;
   margin: 1%;
   border: 2px solid;
-  border-radius: 8px;
+  border-radius: 16px;
   border-color: #82A627;
   box-sizing: border-box;
   overflow-y: auto; 
@@ -355,10 +387,10 @@ input[type="checkbox"] {
 .toggleLabel {
   cursor: pointer;
   display: inline-block;
-  width: 83px;
+  width: 85px;
   height: 23px;
   background-color: #008650;
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1.4px solid #555;
   position: relative;
   padding-left: 27%; 
@@ -420,7 +452,7 @@ input:checked + .toggleLabel::after {
 
 ::-webkit-scrollbar-thumb {
   background: #888; 
-  border-radius: 10px;
+  border-radius: 24px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

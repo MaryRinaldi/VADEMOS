@@ -41,8 +41,8 @@ return (
       <div className='register_form'>
       <h4> Sign Up for access.</h4>  
       <ul> 
-          <li><button onClick={() => openModal(<Register closeModal={closeModal} goToLogin={()=>switchModal(<Login/>)} />)}>Register</button></li>
-          <li><button onClick={() => openModal(<Login closeModal={closeModal} goToRegister={()=>switchModal(<Register/>)} />)}>Login</button></li>
+          <li><button className='home-button' onClick={() => openModal(<Register closeModal={closeModal} goToLogin={()=>switchModal(<Login/>)} />)}>Register</button></li>
+          <li><button className='home-button' onClick={() => openModal(<Login closeModal={closeModal} goToRegister={()=>switchModal(<Register/>)} />)}>Login</button></li>
           </ul>
       </div>
       )}
