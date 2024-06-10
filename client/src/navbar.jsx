@@ -38,7 +38,7 @@ function NavBar({darkMode}) {
           }}>Feedback</Link>
         <Link to="/tools" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Tools</Link>
         <Link to="/Contact" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Contact</Link>
-        <Link to="#" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Logout</Link>
+        <Link to="#" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`} onClick={logout}>Logout</Link>
       </div>
       {showModal && <Modal showModal={showModal} closeModal={closeModal} modalContent={<Feedback />} />}
     </nav>
