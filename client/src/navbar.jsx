@@ -5,6 +5,7 @@ import './App.css';
 import Modal from './components/pages/Modal'
 import Feedback from './components/views/Feedback.jsx'
 import Private from './components/pages/Private.jsx';
+import UserComponent from './components/pages/UserComponent.jsx';
 
 function NavBar({darkMode}) {
   const [showModal, setShowModal] = useState(false);
@@ -38,7 +39,7 @@ function NavBar({darkMode}) {
           }}>Feedback</Link>
         <Link to="/tools" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Tools</Link>
         <Link to="/Contact" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`}>Contact</Link>
-        <Link to="#" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`} onClick={logout}>Logout</Link>
+        <Link to="/" className={`navbar-link ${darkMode ? 'dark-mode' : ''}`} onClick={logout}>Log Out</Link>
       </div>
       {showModal && <Modal showModal={showModal} closeModal={closeModal} modalContent={<Feedback />} />}
     </nav>

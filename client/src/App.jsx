@@ -11,9 +11,6 @@ import Tools from './components/views/Tools.jsx';
 import Feedback from './components/views/Feedback.jsx'
 import Funded from './assets/EN-Funded by the EU-WHITE.png';
 
-
-
-
 function App() {
 
   const [darkMode, setdarkMode] = useState(false);
