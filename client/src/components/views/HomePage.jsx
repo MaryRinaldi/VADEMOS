@@ -46,7 +46,7 @@ return (
           </ul>
       </div>
       )}
-      <div className="paragraph">
+      <div className="information_p">
         <p>
           VADEMOS is a decision-support tool intended to be used to estimate current and future vaccine dose demand for Foot-and-Mouth disease (FMD) at a national and regional level.  It aims to bridge the gap between FMD vaccine demand and vaccine production/supply in endemic countries. It is a stochastic quantitative model which uses predictors of vaccine dose demand such as livestock population forecast, disease control policy related to projected FMD Progressive Control Pathway (PCP) stage, vaccination schedule and outbreak forecasting. Summary details of the inputs of VADEMOS are discussed below.
           <br></br>
