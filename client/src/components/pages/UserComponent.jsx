@@ -36,7 +36,7 @@ const UserComponent = () => {
     //remove token from local storage
     localStorage.removeItem("token");
     //navigate to login page
-    navigate("/");
+    navigate("/login");
   };
 
   return { privateData, logout };
